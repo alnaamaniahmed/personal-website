@@ -1,0 +1,12 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+    /*background-color: #100010; */
+    background-color: #262626;
+}
+

@@ -1,0 +1,108 @@
+.container {
+    font-size: 1.3rem;
+    font-family: "Raleway", sans-serif;
+    background-color: #262626;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #ffffff;
+}
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 7vh;
+}
+.nav__brand {
+    font-size: 1.9rem;
+    font-weight: 500;
+}
+.nav__brand > .brand-name:hover{
+    color: #D3D3D3;
+}
+.nav__menu {
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 6rem;
+}
+.brand-name{
+    color: #ffffff;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+}
+.brand-symbol{
+    color: #892cdc;
+}
+.nav__toggler div{
+    width: 2.5rem;
+    height: 0.2rem;
+    margin: 0.4rem;
+    background-color: #ffffff;
+    transition: 0.3s ease-in;
+}
+.nav__toggler {
+    display: none;
+}
+.nav__link {
+    position: relative;
+    display: inline-block;
+    color: #ffffff; 
+    transition: color 0.3s ease-in-out;
+}
+.nav__link:hover {
+    color: #D3D3D3; 
+}
+
+.nav__link::after {
+    position: absolute;
+    content: '';
+    display: block;
+    margin: auto;
+    height: 2px;
+    width: 0px;
+    bottom: -10px;
+    background: transparent;
+    transition: width 0.5s ease-in-out, background-color 0.5s ease-in-out;
+}
+
+.nav__link:hover::after {
+    width: 100%;
+    background: #892cdc;
+}
+@media screen and (max-width: 768px){
+
+    .nav__toggler{
+        display: block;
+        cursor: pointer;
+    }
+    .nav__menu{
+        background-color: #292929;
+        gap: 0.2rem;
+        position: fixed;
+        top: 7vh;
+        right: 0;
+        width: 50%;
+        height: 50vh;
+        flex-direction: column;
+        transition: 0.5s ease-in;
+        transform: translateX(100%);
+    }
+}
+
+.nav__active {
+    transform: translateX(0);
+}
+.toggle .line1{
+    transform: rotate(45deg)translate(6px, 8px);
+}
+.toggle .line2{
+    opacity: 0;
+}
+.toggle .line3{
+    transform: rotate(-45deg) translate(5px, -8px);
+}
