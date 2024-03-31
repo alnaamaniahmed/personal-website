@@ -1,0 +1,87 @@
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #494949;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+.footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 3rem;
+    height: 4vh;
+}
+p > span {
+    color:#892cdc;
+    font-weight: 550;
+}
+
+.socials{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 3rem;
+}
+#copyRight {
+    margin-right: 9.5%;
+}
+.icon {
+    fill: #ffffff; 
+  }
+.icon:hover{
+    fill: #D3D3D3;
+    transform: scale(1.14);
+    transition: transform 0.2s ease-in-out, color 0.2s ease-in-out; 
+}
+@media screen and (max-width: 768px) {
+    .footer-content{
+        gap: 2rem; 
+        height: 5vh;
+        
+    }
+    .footer-content p{
+        font-size: 0.9rem; 
+    }
+    .socials{
+        gap: 2rem; 
+    }
+    .icon {
+        height: 17px;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .footer-content{
+        flex-direction: column; 
+        gap: 1rem;
+        height: auto;
+    }
+    .socials{
+        flex-direction: row;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+    .footer-content p{
+        font-size: 0.8rem; 
+    }
+    #copyRight {
+        margin: 0;
+        margin-bottom: 2px;
+    }
+    .icon {
+        height: 16px;
+    }
+}
+@media screen and (max-width: 280px) {
+    .footer-content p{
+        font-size: 0.7rem; 
+    }
+    .icon {
+        height: 14px;
+    }
+   
+}
