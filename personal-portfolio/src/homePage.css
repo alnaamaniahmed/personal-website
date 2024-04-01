@@ -1,0 +1,88 @@
+.biggerGrid{
+    position: relative;
+}
+
+.welcomeGrid{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+    font-size: 2.5rem;
+    width: 60%;
+    gap: 1.4rem;
+    margin-top: 140px;
+    margin-left: 17%;
+    margin-right: 200px;
+    font-weight: 500;
+    
+}
+#name {
+    color: #892cdc;
+}
+
+.text-3{
+    padding-top: 55px;
+    font-size: 2.2rem;
+    color: #892cdc;
+}
+.ikbalImage img{
+    position: absolute;
+    float: right;
+    right: 0; 
+    transform: translateY(-48%);
+    margin-right: 200px;
+    max-width: 50%;
+
+    
+}
+@media (max-width: 1300px) {
+    .ikbalImage img {
+        width: 100%; 
+        height: auto; 
+        max-width: 400px; 
+        display: block; 
+        margin: 0 auto; 
+    }
+
+   
+}
+@media (max-width: 768px) {
+    .welcomeGrid {
+      font-size: 2rem;
+      width: 90%;
+      margin-left: auto; 
+      margin-right: auto;
+      gap: 1rem;
+    }
+    .ikbalImage {
+        position: static; 
+        display: block;
+        margin: 0 auto; 
+        max-width: 100%; 
+      }
+  
+    .text-3 {
+      font-size: 1.8rem;
+    }
+  }
+  
+  /* Media query for mobile phones */
+  @media (max-width: 480px) {
+    .welcomeGrid {
+      font-size: 1.5rem;
+      text-align: center;
+      width: 90%; 
+      margin-top: 130px;
+      margin-left: auto; 
+      margin-right: auto; 
+      gap: 0.5rem;
+    }
+    .ikbalImage {
+        position: static; 
+        display: block; 
+        margin: 20px auto; 
+        max-width: 100%; 
+      }
+    .text-3 {
+      font-size: 1.4rem;
+    }
+  }
