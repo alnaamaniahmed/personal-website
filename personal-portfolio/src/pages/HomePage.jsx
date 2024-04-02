@@ -1,9 +1,23 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import '../homePage.css';
-import newpic from '../newpic.png';
-
+import firstPic from '../firstPic.png';
+import secondPic from '../secondPic.png';
 
 function HomePage(props){
+    const [imageSrc, setImageSrc] = useState(firstPic);
+    useEffect(() => {
+        function handleResize(){
+            if(window.innerWidth <= 570){
+                setImageSrc(secondPic);
+            }
+            else {
+                setImageSrc(firstPic);
+            }
+        }
+        window.addEventListener('resize', handleResize);
+        handleResize();
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
     return (
     <div className='biggerGrid'>
         <div className='welcomeGrid'>
@@ -18,8 +32,8 @@ function HomePage(props){
             </div>
         </div>
         <div className="ikbalImage">
-                <img src={newpic} alt="Ikbal" />
-            </div>
+                <img src={imageSrc} alt="Ikbal" />
+        </div>
     </div>
         
     );
