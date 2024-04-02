@@ -2,8 +2,15 @@ import React, {useState, useEffect} from 'react';
 import '../homePage.css';
 import firstPic from '../firstPic.png';
 import secondPic from '../secondPic.png';
+import {useTypewriter, Cursor} from 'react-simple-typewriter';
 
 function HomePage(props){
+    const [text] = useTypewriter({
+        words: ['Full Stack Web Developer', 'Software Engineer'],
+        loop: {},
+        typeSpeed: 120,
+        deleteSpeed: 80,
+    });
     const [imageSrc, setImageSrc] = useState(firstPic);
     useEffect(() => {
         function handleResize(){
@@ -28,7 +35,7 @@ function HomePage(props){
                 I'M <span id="name">Ahmed Al-Naamani</span>
             </div>
             <div className='text-3'>
-                Full Stack Web Developer
+                {text}<span id='cursor'><Cursor /></span>
             </div>
         </div>
         <div className="ikbalImage">
