@@ -24,12 +24,14 @@
 }
 .ikbalImage img{
     display: block;
-    max-width: 100%; 
-    margin-left: 20px; 
+    max-width: 100%;  
     float: right;
-    right: 600px; 
-    transform: translateY(-48%);
-    margin-right: 200px;
+    transform: translateY(-65%);
+    margin-right: 280px;
+}
+.ikbalImage img {
+  height: 450px;
+  width: 450px;
 }
 @media (max-width: 1330px) {
     .ikbalImage img{ 
