@@ -1,4 +1,5 @@
 <h1> Update! Completed the website Desgin "Coding is left" </h1> 
+<a href="https://ahmedalnaamani.netlify.app">Click Here to Check the Progress</a>
 <img src="wireframe/figma/homePageFigma.png" alt="HomePage"/>
 <hr />
 <img src="wireframe/figma/aboutPageFigma.png" alt="aboutPage"/>
