@@ -84,6 +84,7 @@
 @media (max-width: 910px) {
   .ikbalImage img{
     transform: translateX(45%);
+    margin-right: 200px;
   }
 }
 
@@ -121,7 +122,7 @@
     .ikbalImage img {
       height: 250px;
       width: 250px;
-      margin-right: 250px;
+      margin-right: 220px;
       margin-bottom: 120px;
     }
     .ikbalImage {

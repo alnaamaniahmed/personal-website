@@ -1,9 +1,9 @@
 .footer {
-    position: fixed;
+    position: absolute;
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #494949;
+    background: linear-gradient(to right, #494949, #424242, #494949);
     color: white;
     text-align: center;
     padding: 10px 0;

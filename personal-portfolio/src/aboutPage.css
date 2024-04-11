@@ -5,6 +5,7 @@
     justify-content: center;
     align-items: center;
     gap: 8rem;
+    
     height: 72vh;
     min-height: 50vh;
     font-weight: 500;
@@ -117,7 +118,7 @@
     min-height: 20vh;
     margin-left: 200px;
     margin-right: 200px;
-    background-color: #494949;
+    background: linear-gradient(to right, #494949, #424242, #494949);
     overflow-x: hidden;
     margin-bottom: 6rem;
     box-shadow: #892cdc  0 2px 11px;
@@ -161,7 +162,12 @@
         left: 100px;
     }
 }
-
+@media (max-width: 843) {
+    .gridAbout{
+        margin-top: 20px;
+    }
+    
+}
 @media (max-width: 768px) {
     .gridAbout {
         grid-template-columns: auto;

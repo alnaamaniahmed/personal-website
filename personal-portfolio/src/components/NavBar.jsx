@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {Link} from 'react-router-dom';
 import "../navbar.css";
 
@@ -6,19 +6,29 @@ import "../navbar.css";
 function NavBar(props){
     const[active, setActive] = useState("nav__menu");
     const[toggleIcon , setToggleIcon] = useState("nav__toggler");
+    const[navColor, setNavColor] = useState(false);
     const navToggle = () => {
-        active === "nav__menu"
-         ? setActive("nav__menu nav__active")
-         : setActive("nav__menu");
+        setActive(active === "nav__menu" ? "nav__menu nav__active" : "nav__menu");
+        setToggleIcon(toggleIcon === "nav__toggler" ? "nav__toggler toggle" : "nav__toggler");
+    };
+    useEffect(() => {
+        const scrollHandler = () => {
+            if (window.scrollY >= 80) {
+                setNavColor(true);
+            } else {
+                setNavColor(false);
+            }
+        };
 
-        toggleIcon === "nav__toggler"
-         ? setToggleIcon("nav__toggler toggle") 
-         : setToggleIcon("nav__toggler");
+        window.addEventListener("scroll", scrollHandler);
 
-    }
+        return () => {
+            window.removeEventListener("scroll", scrollHandler);
+        };
+    }, []);
     return (
         <div className="container">
-            <nav className="nav">
+            <nav className={`nav ${navColor ? "nav_color" : ""}`}>
                 <Link to="/" className="nav__brand">
                     <span className="brand-symbol">&lt;</span>
                     <span className="brand-name">Ahmed</span>

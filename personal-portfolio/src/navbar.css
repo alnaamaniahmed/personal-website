@@ -2,6 +2,8 @@
     font-size: 1.3rem;
     font-family: "Raleway", sans-serif;
     background-color: #262626;
+    padding-top: 8.7vh;
+  
 }
 li{
     list-style: none;
@@ -11,11 +13,26 @@ a{
     color: #ffffff;
 }
 .nav {
+    position: fixed; 
     display: flex;
+    z-index: 99;
     align-items: center;
     justify-content: space-around;
-    height: 7vh;
+    height: 8.7vh;
+    top: 0; 
+    left: 0; 
+    width: 100%;
+    background-color: rgba(38, 38, 38, 0.85);
+    backdrop-filter: blur(2px);
+    opacity: 0.7; 
+    transition: opacity 0.3s ease-out; 
 }
+.nav.nav_color {
+    z-index: 100;
+    background: linear-gradient(to right, rgba(44, 44, 44, 0.95), rgba(50, 50, 50, 0.95));
+    opacity: 1; 
+}
+
 .nav__brand {
     font-size: 1.9rem;
     font-weight: 500;
@@ -47,6 +64,7 @@ a{
 }
 .nav__toggler {
     display: none;
+    
 }
 .nav__link {
     position: relative;
@@ -75,25 +93,30 @@ a{
     background: #892cdc;
 }
 @media screen and (max-width: 768px){
+    .nav{
+        background: linear-gradient(to right, rgba(44, 44, 44, 0.95), rgba(50, 50, 50, 0.95));
+        height: 12vh;
+        opacity: 0.9; 
+    }
 
     .nav__toggler{
         display: block;
         cursor: pointer;
     }
     .nav__menu{
-        background-color: #292929;
+        background: linear-gradient(to right, rgba(44, 44, 44, 0.95), rgba(50, 50, 50, 0.95));
+        backdrop-filter: none;
         gap: 0.2rem;
         position: fixed;
-        top: 7vh;
+        top: 12vh;
         right: 0;
-        width: 50%;
+        width: 100%;
         height: 50vh;
-        background-color: rgba(41, 41, 41, 0.95);
         flex-direction: column;
         transition: 0.5s ease-in;
         transform: translateX(100%);
-        z-index: 2;
     }
+    
 }
 
 .nav__active {
