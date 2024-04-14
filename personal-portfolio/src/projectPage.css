@@ -20,8 +20,13 @@
     background: linear-gradient(to right, #494949, #424242, #494949);
     height: 600px;
     width: 540px;
+    box-shadow: 0 4px 8px rgba(137, 44, 220, 1); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
+.card:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 12px 24px rgba(137, 44, 220, 1);
+}
 .projectFlexContainer{
     display: flex;
     flex-direction: column;
@@ -30,7 +35,6 @@
     gap: 1rem;
     height: 25vh;
 }
-
 .projectSpan{
     color: #892cdc;
 }
@@ -48,9 +52,133 @@
     width: 70%;
     text-align: justify;
 }
-button {
-    background-color: blue;
+button{
+    cursor: pointer;
+    margin-top: 1.5rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    border-radius: 10px;
+    box-shadow: none;
+    border: none;
+    background: linear-gradient(180deg, #892CDC 0%, #491876 100%);
+    padding: 10px;
+    width: 106px;
+    height: 35px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.smth {
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.textButton{
+    font-family: "Raleway", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #ffffff;
+    padding-left: 5px;
+}
+.iconButton{
     fill: #ffffff;
+    height: 16px;
+    width: 18px;
+
+}
+
+
+@media screen and (max-width: 1200px) {
+    .cardGrid {
+        gap: 1.8rem;
+    }
+    .card {
+        width: 75%; 
+        margin: 0 auto 2rem auto; 
+        height: auto; 
+    }
+    .button, .githubButton { 
+        margin-bottom: 2rem; 
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .cardGrid {
+        grid-template-columns: 1fr;
+        gap: 2rem; 
+    }
+    .card {
+        width: 85%; 
+        margin: 0 auto 2rem auto; 
+    }
+    .button, .githubButton { 
+        margin-bottom: 2rem; 
+    }
+    .cardPara, .textButton {
+        font-size: 1rem;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .projectHeader{
+        margin-top: 10vh;
+    }
+    .projectParagraph{
+        margin-bottom: 3vh;
+    }
+    .cardGrid {
+        padding: 0 10px; 
+    }
+    .card {
+        margin: 0 2rem 2rem 2rem; 
+        width: auto; 
+    }
+    .button, .githubButton { 
+        margin-bottom: 2rem; 
+    }
+    .cardPara, .textButton {
+        font-size: 0.9rem;
+    }
+    .projectFlexContainer {
+        height: auto;
+    }
+}
+@media screen and (max-width: 410) {
+    .card {
+        margin: 0 15px 2rem 15px; 
+        width: calc(100% - 30px); 
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .projectFlexContainer{
+        font-size: 0.9rem;
+    }
+    .cardGrid {
+        padding: 0; 
+        gap: 1rem; 
+    }
+    .cardFlexCont {
+        gap: 0.5rem; 
+    }
+    .card .cardImage {
+        width: 100%; 
+        height: auto;
+        max-width: 300px; 
+    }
+    .cardPara{
+        font-size: 0.8rem; 
+        margin: 0 10px; 
+    }
+    .cardText{
+        margin-bottom: 5px;
+        font-size: 1.3rem;
+    }
+    .githubButton {
+        margin: 1.5rem auto 2rem; 
+        width: 100px; 
+        height: 30px;
+    }
+
+
 }
