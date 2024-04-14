@@ -6,7 +6,7 @@ import resumePic from '../icons/resume.png';
 
 function ResumePage(props){
     const handleDownloadClick = () => {
-        window.open('https://ahmedalnaamani.netlify.app/resources/resume.pdf', '_blank');
+        window.open('/resources/resume.pdf', '_blank');
     };
     return(
         <div className='resumeFlexContainer'>
