@@ -52,7 +52,7 @@
     width: 70%;
     text-align: justify;
 }
-button{
+.githubButton{
     cursor: pointer;
     margin-top: 1.5rem;
     display: inline-flex;
@@ -68,10 +68,7 @@ button{
     height: 35px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
+
 .textButton{
     font-family: "Raleway", sans-serif;
     font-size: 1rem;
@@ -83,7 +80,6 @@ button:hover {
     fill: #ffffff;
     height: 16px;
     width: 18px;
-
 }
 
 

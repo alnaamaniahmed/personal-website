@@ -1,0 +1,110 @@
+.resumeFlexContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 12vh;
+    margin-bottom: 18vh;
+    gap: 2rem;
+}
+
+.resumeImg {
+    height: 1431px;
+    width: 1011px;
+}
+.downloadButton {
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    gap: 4px;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: none;
+    border: none;
+    background: linear-gradient(180deg, #892CDC 0%, #491876 100%);
+    height: 43px;
+    width: 128px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.textDownload {
+    font-family: "Raleway", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #ffffff;
+}
+.downloadIcon{
+    height: 25px;
+    width: 20px;
+}
+
+@media (max-width: 1024px) {
+    .resumeFlexContainer {
+        margin-top: 8vh;
+        margin-bottom: 13vh;
+        gap: 1.5rem;
+    }
+    .resumeImg {
+        height: 800px; 
+        width: 566px; 
+    }
+    .downloadButton {
+        width: 110px; 
+        height: 38px; 
+    }
+    .downloadIcon {
+        height: 22px;
+        width: 18px;
+    }
+    .textDownload {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .resumeFlexContainer {
+        flex-direction: column;
+        gap: 2rem;
+        margin-top: 12vh;
+    }
+    #secondDownloadButton {
+        margin-bottom: 12vh;
+    }
+    .resumeImg {
+        height: 600px; 
+        width: 425px; 
+    }
+    .downloadButton {
+        width: 100px; 
+        height: 35px; 
+    }
+    .downloadIcon {
+        height: 20px;
+        width: 16px;
+    }
+    .textDownload {
+        font-size: 0.8rem;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .resumeFlexContainer {
+        margin-top: 9vh;
+        margin-bottom: 8vh;
+    }
+    .resumeImg {
+        height: 500px;
+        width: 354px;
+    }
+    .downloadButton {
+        width: 90px;
+        height: 32px;
+    }
+    .downloadIcon {
+        height: 18px;
+        width: 15px;
+    }
+    .textDownload {
+        font-size: 0.75rem;
+    }
+}
