@@ -11,6 +11,12 @@ function NavBar({ onNavClick }){
         setActive(active === "nav__menu" ? "nav__menu nav__active" : "nav__menu");
         setToggleIcon(toggleIcon === "nav__toggler" ? "nav__toggler toggle" : "nav__toggler");
     };
+    
+    const handleNavLinkClick = () => {
+        if (active !== "nav__menu") { 
+            navToggle();
+        }
+    };
     useEffect(() => {
         const scrollHandler = () => {
             if (window.scrollY >= 80) {
@@ -35,10 +41,10 @@ function NavBar({ onNavClick }){
                     <span className="brand-symbol">/&gt;</span>
                 </Link>
                 <ul className={active}>
-                    <li className="nav__item"><Link to="/" className="nav__link">Home</Link></li>
-                    <li className="nav__item"><Link to="/about" className="nav__link">About</Link></li>
-                    <li className="nav__item"><Link to="/projects" className="nav__link">Projects</Link></li>
-                    <li className="nav__item"><Link to="/resume" className="nav__link">Resume</Link></li>
+                    <li className="nav__item"><Link to="/" onClick={handleNavLinkClick} className="nav__link">Home</Link></li>
+                    <li className="nav__item"><Link to="/about" onClick={handleNavLinkClick} className="nav__link">About</Link></li>
+                    <li className="nav__item"><Link to="/projects" onClick={handleNavLinkClick} className="nav__link">Projects</Link></li>
+                    <li className="nav__item"><Link to="/resume" onClick={handleNavLinkClick} className="nav__link">Resume</Link></li>
                 </ul>
                 <div onClick={navToggle} className={toggleIcon}>
                     <div className="line1"></div>
