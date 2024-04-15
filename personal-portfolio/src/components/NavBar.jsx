@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import "../navbar.css";
 
 
-function NavBar(props){
+function NavBar({ onNavClick }){
     const[active, setActive] = useState("nav__menu");
     const[toggleIcon , setToggleIcon] = useState("nav__toggler");
     const[navColor, setNavColor] = useState(false);
@@ -29,7 +29,7 @@ function NavBar(props){
     return (
         <div className="container">
             <nav className={`nav ${navColor ? "nav_color" : ""}`}>
-                <Link to="/" className="nav__brand">
+                <Link to="/" onClick={(e) => { e.preventDefault(); onNavClick(); }} className="nav__brand">
                     <span className="brand-symbol">&lt;</span>
                     <span className="brand-name">Ahmed</span>
                     <span className="brand-symbol">/&gt;</span>
