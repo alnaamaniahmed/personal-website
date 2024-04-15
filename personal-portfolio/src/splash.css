@@ -2,6 +2,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 95vh;
     width: 100vw;
+}
+
+@media (max-width: 768px) {
+    .loading .splashSvg {
+        width: 50vw;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .loading .splashSvg {
+        width: 40vw; 
+    }
 }

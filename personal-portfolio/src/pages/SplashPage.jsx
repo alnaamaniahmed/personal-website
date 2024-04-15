@@ -4,7 +4,7 @@ import {ReactComponent as Splash} from '../icons/infinitySplash.svg';
 
 function SplashPage(){
     return (<div className='loading'>
-        <Splash />
+        <Splash className='splashSvg'/>
     </div>);
 }
 
