@@ -28,8 +28,8 @@ function App(){
     };
     return(
         <Router>
-            <div className='main-cont'>
             {!showSplash && <ParticlesComponent id="particles" />}
+            <div className='main-cont'>
             {showSplash ? <SplashPage /> : (
                     <>
                         <NavBar onNavClick={handleSplash} />
