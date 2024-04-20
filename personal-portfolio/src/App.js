@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ParticlesComponent from './Particles';
 import NavBar from './components/NavBar';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
@@ -8,7 +9,6 @@ import ResumePage from './pages/ResumePage';
 import Footer from './components/Footer';
 import SplashPage from './pages/SplashPage';
 import "./App.css";
-import ParticlesComponent from './components/Particles';
 
 function App(){
     const [showSplash, setShowSplash] = useState(true);
@@ -16,7 +16,7 @@ function App(){
     useEffect(() => {
         const timer = setTimeout(() => {
             setShowSplash(false);
-        }, 1300); 
+        }, 1000); 
         return () => clearTimeout(timer);
     }, []);
 
@@ -28,8 +28,8 @@ function App(){
     };
     return(
         <Router>
-            {!showSplash && <ParticlesComponent id="particles" />}
             <div className='main-cont'>
+            {!showSplash && <ParticlesComponent id="particles" />}
             {showSplash ? <SplashPage /> : (
                     <>
                         <NavBar onNavClick={handleSplash} />
