@@ -93,7 +93,7 @@ const options = useMemo(
 );
 
 if (!init) {
-  return <div>Loading particles...</div>;
+  return;
 }
 
 return (
