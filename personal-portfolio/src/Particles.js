@@ -52,11 +52,11 @@ const options = useMemo(
     },
     particles: {
       color: {
-        value: "#892cdc",
+        value: "#00000",
       },
       links: {
-        color: "#FFFFFF",
-        distance: 150,
+        color: "#892cdc",
+        distance: 250,
         enable: true,
         opacity: 0.4,
         width: 1,
