@@ -1,4 +1,4 @@
-import React, {useState, useEffect, lazy, Suspense} from 'react';
+import React, {useState, useEffect,Suspense, lazy} from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import HomePage from './pages/HomePage';
@@ -8,21 +8,16 @@ import ResumePage from './pages/ResumePage';
 import Footer from './components/Footer';
 import SplashPage from './pages/SplashPage';
 import "./App.css";
-
 const ParticlesComponent = lazy(() => import('./components/Particles'));
-
 function App(){
     const [showSplash, setShowSplash] = useState(true);
-    const [initParticles, setInitParticles] = useState(false);
+
     useEffect(() => {
         const timer = setTimeout(() => {
             setShowSplash(false);
-            setTimeout(() => {
-                setInitParticles(true);  
-            }, 30); 
         }, 800); 
         return () => clearTimeout(timer);
-    }, []);;
+    }, []);
 
     const handleSplash = () => {
         setShowSplash(true);
@@ -32,8 +27,8 @@ function App(){
     };
     return(
         <Router>
-             <Suspense fallback={<div>Loading Effects...</div>}>
-                {!showSplash && initParticles && <ParticlesComponent id="particles" />}
+            <Suspense fallback={<div>Loading Particles...</div>}>
+                {!showSplash && <ParticlesComponent id="particles" />}
             </Suspense>
             <div className='main-cont'>
             {showSplash ? <SplashPage /> : (
