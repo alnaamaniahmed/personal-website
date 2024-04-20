@@ -126,6 +126,40 @@
 .sliderStyle img:hover {
     transform: scale(0.9);
 }
+@keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .ikbalImage3 img {
+    animation: fadeInUp 1s ease-out;
+}
+
+.words, .professional-skillSet {
+    animation: fadeInUp 1.2s ease-out;
+}
+
+.gridAbout div {
+    animation: fadeIn 1.5s ease-out;
+}
+
+.skillSetsContainer {
+    animation: fadeIn 2s ease-out;
+}
 @media (max-width: 1200px) {
 
     .words {

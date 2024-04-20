@@ -12,6 +12,7 @@
     margin-left: 17%;
     margin-right: 200px;
     font-weight: 500;
+    animation: fadeIn 1s ease-out;
 }
 #name {
     color: #892cdc;
@@ -28,11 +29,34 @@
     float: right;
     transform: translateY(-65%);
     margin-right: 280px;
+    height: 450px;
+    width: 450px;
+    animation: fadeIn 1.2s ease-out;
 }
-.ikbalImage img {
-  height: 450px;
-  width: 450px;
+.text-1, .text-2, .text-3 {
+  animation: slideInRight 1s ease-out;
+  animation-delay: 0.5s;
 }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 @media (max-width: 1330px) {
     .ikbalImage img{ 
         height: 400px;
@@ -97,6 +121,7 @@
       margin-left: auto; 
       margin-right: auto;
       gap: 1rem;
+      animation: fadeIn 1s ease-out;
     }
     .ikbalImage {
         position: static; 
@@ -107,6 +132,10 @@
   
     .text-3 {
       font-size: 1.8rem;
+    }
+    .text-1, .text-2, .text-3 {
+      animation: fadeIn 1s ease-out;
+      transform: none;
     }
   }
   @media (max-width: 570px){

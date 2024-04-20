@@ -8,6 +8,7 @@ import ResumePage from './pages/ResumePage';
 import Footer from './components/Footer';
 import SplashPage from './pages/SplashPage';
 import "./App.css";
+import ParticlesComponent from './components/Particles';
 
 function App(){
     const [showSplash, setShowSplash] = useState(true);
@@ -31,6 +32,7 @@ function App(){
             {showSplash ? <SplashPage /> : (
                     <>
                         <NavBar onNavClick={handleSplash} />
+                        <ParticlesComponent id="particles" />
                         <Routes>
                             <Route path="/" element={<HomePage />} exact />
                             <Route path="/about" element={<AboutPage />} />

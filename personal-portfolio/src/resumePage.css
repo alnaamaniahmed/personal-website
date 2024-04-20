@@ -11,6 +11,8 @@
 .resumeImg {
     height: 1431px;
     width: 1011px;
+    transition: opacity 1s ease-in-out;
+    animation: fadeIn 1s ease-out forwards;
 }
 .downloadButton {
     cursor: pointer;
@@ -35,6 +37,10 @@
 .downloadIcon{
     height: 25px;
     width: 20px;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 @media (max-width: 1024px) {
