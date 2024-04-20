@@ -56,7 +56,7 @@ const options = useMemo(
       },
       links: {
         color: "#892cdc",
-        distance: 250,
+        distance: isMobile ? 170 : 175,
         enable: true,
         opacity: 0.4,
         width: 1,
@@ -75,7 +75,7 @@ const options = useMemo(
         density: {
           enable: true,
         },
-        value: 80,
+        value: isMobile ? 100 : 120,
       },
       opacity: {
         value: 0.5,
@@ -92,18 +92,17 @@ const options = useMemo(
   [isMobile],
 );
 
-
-if (init) {
-  return (
-    <Particles
-      id={props.id}
-      particlesLoaded={particlesLoaded}
-      options={options}
-    />
-  );
+if (!init) {
+  return <div>Loading particles...</div>;
 }
 
-return <></>;
+return (
+  <Particles
+    id={props.id}
+    particlesLoaded={particlesLoaded}
+    options={options}
+  />
+);
 };
 
 export default ParticlesComponent;
