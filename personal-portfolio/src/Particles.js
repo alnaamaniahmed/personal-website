@@ -27,25 +27,26 @@ const options = useMemo(
         value: "#262626",
       },
     },
-    fpsLimit: isMobile ? 30 : 120,
+    fpsLimit: isMobile ? 30 : 144,
     interactivity: {
       events: {
         onClick: {
           enable: !isMobile,
-          mode: "repulse",
+          mode: "push",
         },
         onHover: {
           enable: !isMobile,
-          mode: 'grab',
+          mode: 'repulse',
         },
       },
       modes: {
         push: {
-          distance: 200,
+          distance: 150,
           duration: 15,
         },
-        grab: {
-          distance: 150,
+        repulse: {
+          distance: 100,
+          duration: 0.2
         },
       },
     },
@@ -57,27 +58,27 @@ const options = useMemo(
         color: "#FFFFFF",
         distance: 150,
         enable: true,
-        opacity: 0.3,
+        opacity: 0.4,
         width: 1,
       },
       move: {
         direction: "none",
         enable: true,
         outModes: {
-          default: "bounce",
+          default: "out",
         },
-        random: true,
-        speed: 1,
+        random: false,
+        speed: 3,
         straight: false,
       },
       number: {
         density: {
           enable: true,
         },
-        value: 100,
+        value: 80,
       },
       opacity: {
-        value: 1.0,
+        value: 0.5,
       },
       shape: {
         type: "circle",

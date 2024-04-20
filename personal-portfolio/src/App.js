@@ -1,4 +1,4 @@
-import React, {useState, useEffect, Su} from 'react';
+import React, {useState, useEffect, Suspense} from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import HomePage from './pages/HomePage';
@@ -26,24 +26,24 @@ function App(){
     };
     return(
         <Router>
-            <Suspense fallback={<div>Loading...</div>}>
-                {!showSplash && <ParticlesComponent id="particles" />}
-                <div className='main-cont'>
-                    {showSplash ? <SplashPage /> : (
-                        <>
-                            <NavBar onNavClick={handleSplash} />
-                            <Routes>
-                                <Route path="/" element={<HomePage />} exact />
-                                <Route path="/about" element={<AboutPage />} />
-                                <Route path="/projects" element={<ProjectsPage />} />
-                                <Route path="/resume" element={<ResumePage />} />
-                            </Routes>
-                            <Footer />
-                        </>
-                    )}
-                </div>
-            </Suspense>
-        </Router>
+        <Suspense fallback={<div>Loading...</div>}>
+            {!showSplash && <ParticlesComponentLazy id="particles" />}
+            <div className='main-cont'>
+                {showSplash ? <SplashPage /> : (
+                    <>
+                        <NavBar onNavClick={handleSplash} />
+                        <Routes>
+                            <Route path="/" element={<HomePage />} exact />
+                            <Route path="/about" element={<AboutPage />} />
+                            <Route path="/projects" element={<ProjectsPage />} />
+                            <Route path="/resume" element={<ResumePage />} />
+                        </Routes>
+                        <Footer />
+                    </>
+                )}
+            </div>
+        </Suspense>
+    </Router>
     );
 }
 export default App;
