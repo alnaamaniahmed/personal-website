@@ -1,4 +1,4 @@
-import React, {useState, useEffect, Suspense} from 'react';
+import React, {useState, useEffect, Su} from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import HomePage from './pages/HomePage';
@@ -27,7 +27,7 @@ function App(){
     return(
         <Router>
             <Suspense fallback={<div>Loading...</div>}>
-                <ParticlesComponentLazy id="particles" />
+                {!showSplash && <ParticlesComponent id="particles" />}
                 <div className='main-cont'>
                     {showSplash ? <SplashPage /> : (
                         <>
