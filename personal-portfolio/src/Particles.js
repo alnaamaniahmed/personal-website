@@ -6,6 +6,14 @@ import { loadSlim } from "@tsparticles/slim";
 
 const ParticlesComponent = (props) => {
   const [init, setInit] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  useEffect(() => {
+    const handleResize = () => {
+        setIsMobile(window.innerWidth <= 768);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+}, []);
   useEffect(() => {
     initParticlesEngine(async (engine) => {
       await loadSlim(engine);
@@ -19,7 +27,7 @@ const particlesLoaded = (container) => {
   console.log(container);
 };
 
-const isMobile = useMemo(() => window.innerWidth <= 768, []);
+
 const options = useMemo(
   () => ({
     background: {
@@ -95,7 +103,7 @@ const options = useMemo(
 if (init) {
   return (
     <Particles
-      id={props.id}
+      id={"particles"}
       particlesLoaded={particlesLoaded}
       options={options}
     />

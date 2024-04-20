@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, Suspense} from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ParticlesComponent from './Particles';
 import NavBar from './components/NavBar';
@@ -10,7 +10,7 @@ import Footer from './components/Footer';
 import SplashPage from './pages/SplashPage';
 import "./App.css";
 
-function App(){
+function App(props){
     const [showSplash, setShowSplash] = useState(true);
 
     useEffect(() => {
@@ -28,8 +28,10 @@ function App(){
     };
     return(
         <Router>
+            <Suspense fallback={<div>Loading Particles...</div>}>
+                {!showSplash && <ParticlesComponent id={"particles"} />}
+            </Suspense>
             <div className='main-cont'>
-            {!showSplash && <ParticlesComponent id="particles" />}
             {showSplash ? <SplashPage /> : (
                     <>
                         <NavBar onNavClick={handleSplash} />
