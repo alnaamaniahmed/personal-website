@@ -27,7 +27,7 @@ function App(){
     return(
         <Router>
         {!showSplash && <ParticlesComponentLazy id="particles" />}
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense>
             <div className='main-cont'>
                 {showSplash ? <SplashPage /> : (
                     <>
