@@ -27,7 +27,7 @@ const options = useMemo(
         value: "#262626",
       },
     },
-    fpsLimit: isMobile ? 30 : 144,
+    fpsLimit: isMobile ? 60 : 120,
     interactivity: {
       events: {
         onClick: {
@@ -56,7 +56,7 @@ const options = useMemo(
       },
       links: {
         color: "#892cdc",
-        distance: isMobile ? 170 : 175,
+        distance: isMobile ? 150 : 175,
         enable: true,
         opacity: 0.4,
         width: 1,
@@ -75,7 +75,7 @@ const options = useMemo(
         density: {
           enable: true,
         },
-        value: isMobile ? 100 : 120,
+        value: isMobile ? 120 : 140,
       },
       opacity: {
         value: 0.5,
