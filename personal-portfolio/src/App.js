@@ -29,10 +29,10 @@ function App(){
     return(
         <Router>
             <div className='main-cont'>
+            {!showSplash && <ParticlesComponent id="particles" />}
             {showSplash ? <SplashPage /> : (
                     <>
                         <NavBar onNavClick={handleSplash} />
-                        <ParticlesComponent id="particles" />
                         <Routes>
                             <Route path="/" element={<HomePage />} exact />
                             <Route path="/about" element={<AboutPage />} />
