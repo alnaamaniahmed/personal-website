@@ -1,6 +1,5 @@
 import React, {useState, useEffect, Suspense} from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import ParticlesComponent from './Particles';
 import NavBar from './components/NavBar';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
@@ -9,10 +8,9 @@ import ResumePage from './pages/ResumePage';
 import Footer from './components/Footer';
 import SplashPage from './pages/SplashPage';
 import "./App.css";
-
-function App(props){
+const ParticlesComponentLazy = React.lazy(() => import('./Particles'));
+function App(){
     const [showSplash, setShowSplash] = useState(true);
-
     useEffect(() => {
         const timer = setTimeout(() => {
             setShowSplash(false);
@@ -28,23 +26,23 @@ function App(props){
     };
     return(
         <Router>
-            <Suspense fallback={<div>Loading Particles...</div>}>
-                {!showSplash && <ParticlesComponent id={"particles"} />}
+            <Suspense fallback={<div>Loading...</div>}>
+                <ParticlesComponentLazy id="particles" />
+                <div className='main-cont'>
+                    {showSplash ? <SplashPage /> : (
+                        <>
+                            <NavBar onNavClick={handleSplash} />
+                            <Routes>
+                                <Route path="/" element={<HomePage />} exact />
+                                <Route path="/about" element={<AboutPage />} />
+                                <Route path="/projects" element={<ProjectsPage />} />
+                                <Route path="/resume" element={<ResumePage />} />
+                            </Routes>
+                            <Footer />
+                        </>
+                    )}
+                </div>
             </Suspense>
-            <div className='main-cont'>
-            {showSplash ? <SplashPage /> : (
-                    <>
-                        <NavBar onNavClick={handleSplash} />
-                        <Routes>
-                            <Route path="/" element={<HomePage />} exact />
-                            <Route path="/about" element={<AboutPage />} />
-                            <Route path="/projects" element={<ProjectsPage />} />
-                            <Route path="/resume" element={<ResumePage />} />
-                        </Routes>
-                        <Footer />
-                    </>
-                )}
-            </div>
         </Router>
     );
 }

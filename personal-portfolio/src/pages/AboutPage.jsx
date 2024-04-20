@@ -26,7 +26,7 @@ import vsCodePic from '../icons/vscode.png';
 import wireSharkPic from '../icons/wireshark.png';
 import secondPic from '../secondPic.png';
 
-function AboutPage(props){
+function AboutPage(){
     const [imageSrc, setImageSrc] = useState(thirdPic);
     useEffect(() => {
         function handleResize(){
