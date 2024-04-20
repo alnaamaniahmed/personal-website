@@ -15,7 +15,7 @@ const ParticlesComponent = (props) => {
     console.log(container);
   };
 
-
+  const isMobile = useMemo(() => window.innerWidth <= 768, []);
   const options = useMemo(
     () => ({
       background: {
@@ -23,15 +23,15 @@ const ParticlesComponent = (props) => {
           value: "#262626",
         },
       },
-      fpsLimit: 60,
+      fpsLimit: isMobile ? 30 : 120,
       interactivity: {
         events: {
           onClick: {
-            enable: false,
+            enable: !isMobile,
             mode: "repulse",
           },
           onHover: {
-            enable: true,
+            enable: !isMobile,
             mode: 'grab',
           },
         },
@@ -84,7 +84,7 @@ const ParticlesComponent = (props) => {
       },
       detectRetina: true,
     }),
-    [],
+    [isMobile],
   );
 
 
