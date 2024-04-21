@@ -1,108 +1,30 @@
-import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { useEffect, useMemo, useState} from "react";
-import { loadSlim } from "@tsparticles/slim"; 
-
-
+import React, { useEffect, useState } from 'react';
+import Particles from "@tsparticles/react";
+import { initParticlesEngine } from "@tsparticles/react";
+import { loadSlim } from "@tsparticles/slim";
 
 const ParticlesComponent = (props) => {
-  const [init, setInit] = useState(false);
-  useEffect(() => {
-    initParticlesEngine(async (engine) => {
-      await loadSlim(engine);
-    }).then(() => {
-      setInit(true);
-    });
-  }, []);
+    const [options, setOptions] = useState(null);
+    const [init, setInit] = useState(false);
 
+    useEffect(() => {
+        fetch('/.netlify/functions/particlesConfig')
+            .then(response => response.json())
+            .then(data => {
+                setOptions(data);
+                initParticlesEngine(async (engine) => {
+                    await loadSlim(engine);
+                }).then(() => {
+                    setInit(true);
+                });
+            })
+            .catch(error => console.error('Failed to load particles config:', error));
+    }, []);
 
-const particlesLoaded = (container) => {
-  console.log(container);
-};
-
-const isMobile = useMemo(() => window.innerWidth <= 768, []);
-const options = useMemo(
-  () => ({
-    background: {
-      color: {
-        value: "#262626",
-      },
-    },
-    fpsLimit: isMobile ? 60 : 120,
-    interactivity: {
-      events: {
-        onClick: {
-          enable: !isMobile,
-          mode: "push",
-        },
-        onHover: {
-          enable: !isMobile,
-          mode: 'repulse',
-        },
-      },
-      modes: {
-        push: {
-          distance: 150,
-          duration: 15,
-        },
-        repulse: {
-          distance: 100,
-          duration: 0.2
-        },
-      },
-    },
-    particles: {
-      color: {
-        value: "#00000",
-      },
-      links: {
-        color: "#892cdc",
-        distance: isMobile ? 150 : 175,
-        enable: true,
-        opacity: 0.4,
-        width: 1,
-      },
-      move: {
-        direction: "none",
-        enable: true,
-        outModes: {
-          default: "out",
-        },
-        random: false,
-        speed: 3,
-        straight: false,
-      },
-      number: {
-        density: {
-          enable: true,
-        },
-        value: isMobile ? 120 : 140,
-      },
-      opacity: {
-        value: 0.5,
-      },
-      shape: {
-        type: "circle",
-      },
-      size: {
-        value: { min: 1, max: 3 },
-      },
-    },
-    detectRetina: true,
-  }),
-  [isMobile],
-);
-
-if (!init) {
-  return;
-}
-
-return (
-  <Particles
-    id={props.id}
-    particlesLoaded={particlesLoaded}
-    options={options}
-  />
-);
+        // Only render the Particles component if both `init` and `options` are set
+    return init && options ? (
+        <Particles id={props.id} options={options} />
+    ) : null;
 };
 
 export default ParticlesComponent;
