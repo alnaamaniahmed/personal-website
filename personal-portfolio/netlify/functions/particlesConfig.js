@@ -12,7 +12,7 @@ exports.handler = async function(event, context) {
           interactivity: {
             events: {
               onClick: {
-                enable: !isMobile,
+                enable: true,
                 mode: "push",
               },
               onHover: {
