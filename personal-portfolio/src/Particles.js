@@ -21,7 +21,7 @@ const ParticlesComponent = (props) => {
             .catch(error => console.error('Failed to load particles config:', error));
     }, []);
 
-        // Only render the Particles component if both `init` and `options` are set
+    
     return init && options ? (
         <Particles id={props.id} options={options} />
     ) : null;

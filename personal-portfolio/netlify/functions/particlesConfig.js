@@ -37,7 +37,7 @@ exports.handler = async function(event, context) {
             },
             links: {
               color: "#892cdc",
-              distance: isMobile ? 145 : 185,
+              distance: isMobile ? 130 : 175,
               enable: true,
               opacity: 0.4,
               width: 1,
@@ -56,7 +56,7 @@ exports.handler = async function(event, context) {
               density: {
                 enable: true,
               },
-              value: isMobile ? 65 : 150,
+              value: isMobile ? 90 : 150,
             },
             opacity: {
               value: 0.5,
