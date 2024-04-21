@@ -8,7 +8,7 @@ exports.handler = async function(event, context) {
               value: "#262626",
             },
           },
-          fpsLimit: isMobile ? 60 : 120,
+          fpsLimit: isMobile ? 60 : 144,
           interactivity: {
             events: {
               onClick: {
@@ -37,7 +37,7 @@ exports.handler = async function(event, context) {
             },
             links: {
               color: "#892cdc",
-              distance: isMobile ? 130 : 175,
+              distance: isMobile ? 130 : 100,
               enable: true,
               opacity: 0.4,
               width: 1,

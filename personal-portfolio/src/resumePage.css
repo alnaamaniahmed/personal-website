@@ -114,3 +114,13 @@
         font-size: 0.75rem;
     }
 }
+@media (max-width: 300px){
+    .resumeFlexContainer {
+       width: 50%;
+       margin-left: 70px;
+    }
+    .resumeImg {
+        height: 300px;
+        width: 259px;
+    }
+}

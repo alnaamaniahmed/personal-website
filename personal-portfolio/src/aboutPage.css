@@ -223,7 +223,7 @@
     }
 
     .words {
-        gap: 1.6rem;
+        gap: 1.8rem;
         text-align: justify;
         width: 100%;
     }
@@ -284,7 +284,7 @@
     }
     .professional-skillSet {
         margin-bottom: 3rem;
-        min-height: 20vh;
+        min-height: 17vh;
     }
 }
 @media (max-width: 400px) {
@@ -293,8 +293,8 @@
         padding-right: 1.2em;
     }
     .words{
-        margin-right: 20px;
-        margin-left: 20px;
+        margin-right: 6px;
+        margin-left: 6px;
         width: 100%;
     }
     .ikbalImage3 img {
@@ -306,17 +306,29 @@
     }
     .professional-skillSet {
         margin-bottom: 20px;
-        min-height: 15vh;
+        min-height: 16.6vh;
     }
 }
 
-@media (max-width: 280px){
+@media (max-width: 300px){
     .words{
-        margin-left: 80px;
-        width: 100%;
+        font-size: 0.8rem;
+        width: 91%;
+        margin-left: 5px;
+    
+        padding-right: 2rem;
+    }
+    #firstText, #secondText,.activity-1, .activity-2{
+        width: 200px;
+        transform: translateX(15%);
     }
     .headText {
+        transform: translateX(15%);
         text-align: center;
-        padding-right: 7rem;
+        padding-right: 2rem;
+    }
+    .professional-skillSet {
+        margin-bottom: 5px;
+        min-height: 5vh;
     }
 }
