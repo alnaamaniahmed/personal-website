@@ -56,7 +56,7 @@ exports.handler = async function(event, context) {
               density: {
                 enable: true,
               },
-              value: isMobile ? 90 : 150,
+              value: isMobile ? 98 : 150,
             },
             opacity: {
               value: 0.5,
