@@ -7,7 +7,7 @@ import ProjectsPage from './pages/ProjectsPage';
 import ResumePage from './pages/ResumePage';
 import Footer from './components/Footer';
 import SplashPage from './pages/SplashPage';
-import "./App.css";
+import "./styles/App.css";
 const ParticlesComponentLazy = React.lazy(() => import('./Particles'));
 function App(){
     const [showSplash, setShowSplash] = useState(true);

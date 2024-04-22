@@ -1,7 +1,7 @@
 import React from 'react';
-import '../resumePage.css';
+import '../styles/resumePage.css';
 import {ReactComponent as DownloadIcon} from '../icons/download.svg';
-import resumePic from '../icons/resume.png';
+import resumePic from './pages_images/resume.png';
 
 
 function ResumePage(props){

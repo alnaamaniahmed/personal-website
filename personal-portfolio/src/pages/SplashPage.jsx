@@ -1,5 +1,5 @@
 import React from 'react';
-import '../splash.css';
+import '../styles/splash.css';
 import {ReactComponent as Splash} from '../icons/infinitySplash.svg';
 
 function SplashPage(){

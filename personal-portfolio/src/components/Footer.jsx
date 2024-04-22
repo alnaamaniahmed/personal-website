@@ -1,5 +1,5 @@
 import React from 'react';
-import '../footer.css';
+import '../styles/footer.css';
 import {ReactComponent as LinkedInIcon} from '../icons/linkedin.svg';
 import {ReactComponent as GitHubIcon} from '../icons/github.svg';
 

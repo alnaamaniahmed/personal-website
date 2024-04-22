@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {Link,  useNavigate} from 'react-router-dom';
-import "../navbar.css";
+import "../styles/navbar.css";
 
 
 function NavBar({ onNavClick }){

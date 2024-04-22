@@ -1,9 +1,9 @@
 import React from 'react';
-import '../projectPage.css';
-import quickCash from '../quickCashProject.png';
-import simonGame from '../simonGame.png';
-import personalWebProject from '../personalWebProject.png';
-import artByYou from '../artByYou.png';
+import '../styles/projectPage.css';
+import quickCash from './pages_images/quickCashProject.png';
+import simonGame from './pages_images/simonGame.png';
+import personalWebProject from './pages_images/personalWebProject.png';
+import artByYou from './pages_images/artByYou.png';
 import {ReactComponent as GitHubIcon} from '../icons/github.svg';
 
 function ProjectsPage(props){

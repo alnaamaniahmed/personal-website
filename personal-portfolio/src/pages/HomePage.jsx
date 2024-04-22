@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import '../homePage.css';
-import firstPic from '../firstPic.png';
-import secondPic from '../secondPic.png';
+import '../styles/homePage.css';
+import firstPic from './pages_images/firstPic.png';
+import secondPic from './pages_images/secondPic.png';
 import {useTypewriter, Cursor} from 'react-simple-typewriter';
 
 function HomePage(props){
@@ -39,7 +39,7 @@ function HomePage(props){
             </div>
         </div>
         <div className="ikbalImage">
-                <img src={imageSrc} alt="Ikbal" />
+                <img src={imageSrc} alt="Ahmed" />
         </div>
     </div>
         

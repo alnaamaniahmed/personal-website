@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import thirdPic from '../thirdPic.png';
+import thirdPic from './pages_images/thirdPic.png';
 import Slider from 'react-infinite-logo-slider';
-import '../aboutPage.css';
+import '../styles/aboutPage.css';
 import dumbbellIcon from '../icons/dumbbell.png';
 import iceSkates from '../icons/iceSkates.png';
 import htmlImage from '../icons/html.png';
@@ -24,7 +24,7 @@ import pythonPic from '../icons/python.png';
 import reactjsPic from '../icons/reactjs_icon.png';
 import vsCodePic from '../icons/vscode.png';
 import wireSharkPic from '../icons/wireshark.png';
-import secondPic from '../secondPic.png';
+import secondPic from './pages_images/secondPic.png';
 
 function AboutPage(props){
     const [imageSrc, setImageSrc] = useState(thirdPic);
@@ -45,7 +45,7 @@ function AboutPage(props){
         <div>
             <div className='gridAbout'>
                 <div className='ikbalImage3'>
-                    <img src={imageSrc} alt='Ikbal' />
+                    <img src={imageSrc} alt='Ahmed' />
                 </div>
                 <div className='words'>
                     <h1 className='headText'>Know Who I am</h1>
