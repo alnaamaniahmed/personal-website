@@ -49,7 +49,7 @@ function AboutPage(props){
                 </div>
                 <div className='words'>
                     <h1 className='headText'>Know Who I am</h1>
-                    <p id='firstText'>I am from the culturally rich and scenic city of Muscat, Oman. As a Junior Computer Science student at Dalhousie University. I am passionately coding my path through the complexities of technology.</p>
+                    <p id='firstText'>I am from the culturally rich and scenic city of Muscat, Oman. As a Senior Computer Science student at Dalhousie University. I am passionately coding my path through the complexities of technology.</p>
                     <p id='secondText'>In addition to my academic pursuits, I engage in various activities to maintain a balanced lifestyle!</p>
                     <ul className='activities'>
                         <li className='activity-1'>Lifting <span className='dumbbell'><img src={dumbbellIcon} alt='dumbbell'/></span></li>
